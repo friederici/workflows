@@ -24,10 +24,10 @@ workflow {
 
   greetings = sayHello( namesChannel )
 
-  greetingsList = greetings.collect()
+  greetingsList = greetings.toList()
   outfile = file('greetings.txt')
-  for ( entry : greetingsList ) {
-    outfile.append(entry.view())
+  greetingsList.subscribe {
+    outfile.append( it )
   }
 }
 
