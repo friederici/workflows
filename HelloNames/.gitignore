@@ -1,0 +1,6 @@
+.nextflow.log
+.nextflow.log.*
+.nextflow/
+work/
+greetings.txt
+
