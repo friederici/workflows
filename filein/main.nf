@@ -26,7 +26,7 @@ process memstress1 {
   shell:
   '''
   filesize=`wc -c < !{infile}`
-  stress-ng --vm-bytes ${filesize} --vm-keep -m 1 -t 30
+  stress-ng --vm-bytes ${filesize} --vm-keep -m 1 -t 10
   halfsize=`expr ${filesize} / 2097152`
   dd if=/dev/zero of=out1 bs=1M count=${halfsize}
   dd if=/dev/zero of=out2 bs=1M count=${halfsize}
@@ -89,5 +89,10 @@ process memstress4 {
 }
 
 workflow {
-  Channel.of(1..3) | createFiles | memstress1 | view
+  Channel.of(1..3) | createFiles | memstress1 | multiMap { a,b -> 
+    upper: a
+    lower: b
+  } | set { input }
+  input.upper | memstress2 | view
+  input.lower | memstress3 | view
 }
