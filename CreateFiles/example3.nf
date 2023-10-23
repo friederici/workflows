@@ -13,9 +13,12 @@ process createFiles {
   """
 }
 
-process memstress {
+process fileSize {
   input:
   path 'infile'
+
+  output:
+  stdout
 
   shell:
   '''
@@ -25,5 +28,5 @@ process memstress {
 }
 
 workflow {
-  Channel.of(1..10) | createFiles | memstress
+  Channel.of(1..10) | createFiles | fileSize
 }
