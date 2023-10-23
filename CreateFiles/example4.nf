@@ -33,7 +33,7 @@ process memstress {
 
   script:
   """
-  stress-ng --vm-bytes ${MEM}m --vm-keep -m ${CPU} -t ${TIME}
+  stress-ng --vm-bytes ${MEM} --vm-keep -m ${CPU} -t ${TIME}
   """
 }
 
