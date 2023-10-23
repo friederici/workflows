@@ -1,0 +1,88 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: workflows
+
+---
+
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  namespace: workflows
+  name: sauser
+
+---
+
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  namespace: workflows
+  name: workflows-role
+rules:
+  - apiGroups: [""]
+    resources: ["pods","pods/status","pods/log","pods/exec","nodes","bindings","configmaps"]
+    verbs: ["get", "list", "watch", "create", "update", "patch", "delete"]
+
+---
+
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  namespace: workflows
+  name: workflows-rolebind
+roleRef:
+  kind: ClusterRole
+  name: workflows-role
+  apiGroup: rbac.authorization.k8s.io
+subjects:
+  - kind: ServiceAccount
+    name: sauser
+    namespace: workflows
+
+---
+
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: workflows-pv
+spec:
+  storageClassName: ""
+  accessModes:
+    - ReadWriteMany
+  capacity:
+    storage: 1Gi
+  hostPath:
+    path: /workflows
+
+---
+
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  namespace: workflows
+  name: workflows-pvc
+spec:
+  volumeName: workflows-pv
+  storageClassName: ""
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 1Gi
+
+---
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: workflow-scheduler
+  namespace: workflows
+spec:
+  containers:
+  - image: alpine
+    command:
+      - "sleep"
+      - "20000"
+    name: workflow-scheduler
+  restartPolicy: Always
+
