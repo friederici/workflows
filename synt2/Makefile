@@ -1,5 +1,8 @@
 run:
-	nextflow run main.nf
+	nextflow run main.nf -c nextflow.config
+
+run-minikube:
+	nextflow run main.nf -c nextflow-minikube.config
 
 clean:
 	${RM} -r work
