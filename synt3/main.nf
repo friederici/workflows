@@ -64,6 +64,9 @@ process memstress_files_3 {
 }
 
 process memstress_files_4 {
+  cpus 1
+  memory '2 GB'
+
   input:
   tuple path('in1'), path('in2')
 
@@ -72,7 +75,7 @@ process memstress_files_4 {
 
   shell:
   '''
-  cat in1 in2 > infile
+  cat !{in1} !{in2} > infile
   filesize=`wc -c < infile`
   stress-ng --vm-bytes ${filesize}m --vm-keep -m 1 -t 25
   dd if=/dev/zero of=outfile bs=1 count=${filesize}
@@ -86,7 +89,5 @@ workflow {
   } | set { input }
   input.upper | memstress_files_2 | set { outa }
   input.lower | memstress_files_3 | set { outb }
-  outa | combine(outb) | memstress_files_4 | view
-
+  outa | concat(outb) | buffer( size: 2 ) | memstress_files_4 | view
 }
-
