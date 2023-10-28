@@ -9,6 +9,8 @@
  * independent of the size it needs to be, so without task scaling, 
  * resources might be unused.
  *
+ * The memory consumption of the task, will be the input filesize, but
+ * multiplied with 2^20 (i.e. 1 MiB)
  */
  
 process memstress_files {
