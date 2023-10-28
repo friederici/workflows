@@ -77,12 +77,31 @@ kind: Pod
 metadata:
   name: workflow-scheduler
   namespace: workflows
+  labels:
+    app: cws
+    component: scheduler
+    tier: control-plane
 spec:
   containers:
-  - image: alpine
+  - image: friederici/cws
     command:
       - "sleep"
       - "20000"
     name: workflow-scheduler
+    env:
+    - name: SCHEDULER_NAME
+      value: workflow-scheduler
+    - name: MEMORY_PREDICTOR
+      value: combi
+    imagePullPolicy: Always
+    resources:
+      limits:
+        cpu: "2"
+        memory: 1400Mi
+      requests:
+        cpu: "2"
+        memory: 1400Mi
   restartPolicy: Always
-
+  securityContext:
+    runAsUser: 0
+  serviceAccount: sauser
