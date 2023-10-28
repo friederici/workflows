@@ -46,13 +46,18 @@ kind: PersistentVolume
 metadata:
   name: workflows-pv
 spec:
-  storageClassName: ""
+  storageClassName: nfs
   accessModes:
     - ReadWriteMany
   capacity:
     storage: 1Gi
-  hostPath:
+  volumeMode: Filesystem
+  mountOptions:
+    - hard
+    - nfsvers=4.1
+  nfs:
     path: /workflows
+    server: node1
 
 ---
 
@@ -63,7 +68,7 @@ metadata:
   name: workflows-pvc
 spec:
   volumeName: workflows-pv
-  storageClassName: ""
+  storageClassName: nfs
   accessModes:
     - ReadWriteMany
   resources:
@@ -84,9 +89,6 @@ metadata:
 spec:
   containers:
   - image: friederici/cws
-    command:
-      - "sleep"
-      - "20000"
     name: workflow-scheduler
     env:
     - name: SCHEDULER_NAME
@@ -95,13 +97,17 @@ spec:
       value: combi
     imagePullPolicy: Always
     resources:
-      limits:
-        cpu: "2"
-        memory: 1400Mi
       requests:
-        cpu: "2"
+        cpu: "1"
         memory: 1400Mi
-  restartPolicy: Always
+    volumeMounts:
+    - mountPath: /workflows
+      name: vol-1
+  restartPolicy: Never
   securityContext:
     runAsUser: 0
   serviceAccount: sauser
+  volumes:
+    - name: vol-1
+      persistentVolumeClaim:
+        claimName: workflows-pvc
