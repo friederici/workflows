@@ -24,6 +24,8 @@ spec:
     volumeMounts:
     - mountPath: /workflows
       name: vol-1
+  nodeSelector:
+    ramSize: "4"
   restartPolicy: Never
   securityContext:
     runAsUser: 0
