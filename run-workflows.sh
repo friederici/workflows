@@ -1,22 +1,27 @@
 #!/bin/bash
 
+predictors=(none combi)
+
 echo "starting workflows"
-date
+start_date=`date`
 
 for dir in synt*
 do
 	cd $dir
 	pwd
-
-	for i in $(seq 1 10);
+	for p in "${predictors[@]}"
 	do
-		echo $i
-		make run
+		echo $p
+		for i in $(seq 1 5);
+		do
+			echo $i
+			make dev-run-$p
+		done
 	done
-
 	cd ..
 done
 
+end_date=`date`
 echo "finished workflows"
-date
+echo "from $start_date to $end_date"
 
