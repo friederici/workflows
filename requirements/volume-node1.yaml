@@ -1,0 +1,33 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: workflows-pv
+spec:
+  storageClassName: nfs
+  accessModes:
+    - ReadWriteMany
+  capacity:
+    storage: 1Gi
+  volumeMode: Filesystem
+  mountOptions:
+    - hard
+    - nfsvers=4.1
+  nfs:
+    path: /workflows
+    server: node1
+
+---
+
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  namespace: workflows
+  name: workflows-pvc
+spec:
+  volumeName: workflows-pv
+  storageClassName: nfs
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 1Gi

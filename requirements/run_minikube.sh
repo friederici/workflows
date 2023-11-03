@@ -7,7 +7,10 @@ else
 fi
 
 minikube start --nodes $nodes --feature-gates=InPlacePodVerticalScaling=true
-minikube kubectl -- apply -f k8s-minikube.yaml
+
+minikube kubectl -- apply -f k8s.yaml
+minikube kubectl -- apply -f volume-minikube.yaml
+
 minikube mount /workflows/:/workflows/ &
 #minikube dashboard &
 
