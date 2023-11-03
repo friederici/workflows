@@ -1,5 +1,0 @@
-2023-10-23 16:40:19	2.2s	golden_euler	ERR	9a27375a959abb4882b499f254bd3a6c	3d999745-19da-405b-982d-6bfb6755fa55	nextflow run example5.nf
-2023-10-23 16:46:11	2.5s	tiny_borg	ERR	e187235101e05803876fc2029a8d5aaa	22e52816-4b25-4ebb-9739-5eb7a9a51f56	nextflow run example5.nf
-2023-10-23 16:47:38	28.3s	chaotic_hamilton	ERR	4e5f0f7b19875cba02417576eab81be4	ef182bbe-82aa-42f7-bcac-c8d04876e16d	nextflow run example5.nf
-2023-10-23 16:48:21	11.1s	furious_angela	OK	e4b1665c6d484a25ec1228905e6407d2	1faafd3c-1d32-4711-9c95-5ec2e37d564d	nextflow run example5.nf
-2023-10-23 17:30:27	10.9s	high_goldwasser	OK	9ddc157ca913cc875f2ad1b02eb6e34e	d7b2f3ae-afc8-40c7-af44-d823f486d61f	nextflow run example6.nf
