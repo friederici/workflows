@@ -1,0 +1,10 @@
+nextflow.scheduler.trace/v1
+scheduler_time_in_queue=37865
+scheduler_place_in_queue=1
+scheduler_nodes_tried=1
+scheduler_nodes_cost="0.5625"
+scheduler_best_cost=0.5625
+scheduler_tried_to_schedule=13
+scheduler_time_to_schedule=1
+scheduler_delta_schedule_submitted=235
+scheduler_delta_schedule_alignment=217

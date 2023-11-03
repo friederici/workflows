@@ -1,0 +1,132 @@
+Okt.-26 15:18:11.175 [main] DEBUG nextflow.cli.Launcher - $> nextflow run main.nf
+Okt.-26 15:18:11.358 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 23.10.0
+Okt.-26 15:18:11.412 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/home/pflo/.nextflow/plugins; core-plugins: nf-amazon@2.1.4,nf-azure@1.3.2,nf-cloudcache@0.3.0,nf-codecommit@0.1.5,nf-console@1.0.6,nf-ga4gh@1.1.0,nf-google@1.8.3,nf-tower@1.6.3,nf-wave@1.0.0
+Okt.-26 15:18:11.429 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Okt.-26 15:18:11.431 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Okt.-26 15:18:11.437 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.4.1 in 'deployment' mode
+Okt.-26 15:18:11.455 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+Okt.-26 15:18:11.493 [main] DEBUG nextflow.config.ConfigBuilder - Found config local: /workflows/filein/nextflow.config
+Okt.-26 15:18:11.496 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /workflows/filein/nextflow.config
+Okt.-26 15:18:11.567 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `standard`
+Okt.-26 15:18:14.644 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=2 by global default
+Okt.-26 15:18:14.677 [main] INFO  nextflow.cli.CmdRun - Launching `main.nf` [admiring_kimura] DSL2 - revision: 6cac02303b
+Okt.-26 15:18:14.682 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins declared=[nf-cws]
+Okt.-26 15:18:14.684 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+Okt.-26 15:18:14.684 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[nf-cws]
+Okt.-26 15:18:14.684 [main] DEBUG nextflow.plugin.PluginUpdater - Installing plugin nf-cws version: latest
+Okt.-26 15:18:15.816 [main] INFO  org.pf4j.AbstractPluginManager - Plugin 'nf-cws@1.0.3' resolved
+Okt.-26 15:18:15.816 [main] INFO  org.pf4j.AbstractPluginManager - Start plugin 'nf-cws@1.0.3'
+Okt.-26 15:18:15.826 [main] DEBUG nextflow.plugin.BasePlugin - Plugin started nf-cws@1.0.3
+Okt.-26 15:18:15.873 [main] DEBUG n.secret.LocalSecretsProvider - Secrets store: /home/pflo/.nextflow/secrets/store.json
+Okt.-26 15:18:15.888 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@383caf89] - activable => nextflow.secret.LocalSecretsProvider@383caf89
+Okt.-26 15:18:16.081 [main] DEBUG nextflow.Session - Session UUID: e5b62be0-8372-4802-9883-756dd0765115
+Okt.-26 15:18:16.081 [main] DEBUG nextflow.Session - Run name: admiring_kimura
+Okt.-26 15:18:16.082 [main] DEBUG nextflow.Session - Executor pool size: 4
+Okt.-26 15:18:16.099 [main] DEBUG nextflow.file.FilePorter - File porter settings maxRetries=3; maxTransfers=50; pollTimeout=null
+Okt.-26 15:18:16.112 [main] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'FileTransfer' minSize=10; maxSize=12; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
+Okt.-26 15:18:16.227 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 23.10.0 build 5889
+  Created: 15-10-2023 15:07 UTC (17:07 MESZ)
+  System: Linux 6.2.0-35-generic
+  Runtime: Groovy 3.0.19 on OpenJDK 64-Bit Server VM 11.0.20.1+1-post-Ubuntu-0ubuntu122.04
+  Encoding: UTF-8 (UTF-8)
+  Process: 407953@pflo-VirtualBox [127.0.1.1]
+  CPUs: 4 - Mem: 7.7 GB (1 GB) - Swap: 2 GB (2 GB)
+Okt.-26 15:18:16.339 [main] DEBUG nextflow.Session - Work-dir: /workflows/filein/work [ext2/ext3]
+Okt.-26 15:18:16.339 [main] DEBUG nextflow.Session - Script base path does not exist or is not a directory: /workflows/filein/bin
+Okt.-26 15:18:16.386 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[CWSK8sExecutor]
+Okt.-26 15:18:16.387 [main] DEBUG nextflow.executor.ExecutorFactory - Replacing executor K8sExecutor with class nextflow.cws.k8s.CWSK8sExecutor
+Okt.-26 15:18:16.446 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+Okt.-26 15:18:16.463 [main] DEBUG nextflow.Session - Observer factory: CWSFactory
+Okt.-26 15:18:16.525 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+Okt.-26 15:18:16.583 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 5; maxThreads: 1000
+Okt.-26 15:18:16.933 [main] DEBUG nextflow.Session - Session start
+Okt.-26 15:18:16.976 [main] DEBUG nextflow.trace.TraceFileObserver - Workflow started -- trace file: /workflows/filein/trace-20231026-55096452.txt
+Okt.-26 15:18:18.607 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Okt.-26 15:18:19.016 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: k8s
+Okt.-26 15:18:19.016 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'k8s'
+Okt.-26 15:18:19.019 [main] DEBUG nextflow.executor.Executor - [warm up] executor > k8s
+Okt.-26 15:18:19.060 [main] DEBUG n.c.processor.CWSTaskPollingMonitor - Creating task monitor for executor 'k8s' > capacity: 100; pollInterval: 5s; dumpInterval: 5m; schedulerBatch: null
+Okt.-26 15:18:19.073 [main] DEBUG n.processor.TaskPollingMonitor - >>> barrier register (monitor: k8s)
+Okt.-26 15:18:19.386 [main] DEBUG nextflow.k8s.K8sExecutor - [K8s] config=[namespace:workflows, serviceAccount:sauser, storageClaimName:workflows-pvc, storageMountPath:/workflows, scheduler:[name:workflow-scheduler]]; API client config=ClientConfig[ server=https://192.168.49.2:8443, namespace=workflows, serviceAccount=sauser, token=-, sslCert=LS0tLS1CRUd.., clientCert=LS0tLS1CRUd.., clientKey=LS0tLS1CRUd.., verifySsl=true, fromFile=false, httpReadTimeout=null, httpConnectTimeout=null, maxErrorRetry=4 ]
+Okt.-26 15:18:26.479 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: k8s
+Okt.-26 15:18:26.479 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'k8s'
+Okt.-26 15:18:26.620 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: k8s
+Okt.-26 15:18:26.621 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'k8s'
+Okt.-26 15:18:26.637 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: k8s
+Okt.-26 15:18:26.638 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'k8s'
+Okt.-26 15:18:26.650 [main] DEBUG nextflow.Session - Workflow process names [dsl2]: memstress2, memstress1, memstress4, memstress3, createFiles
+Okt.-26 15:18:26.740 [main] DEBUG nextflow.Session - Igniting dataflow network (5)
+Okt.-26 15:18:26.741 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > createFiles
+Okt.-26 15:18:26.742 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > memstress1
+Okt.-26 15:18:26.743 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > memstress2
+Okt.-26 15:18:26.743 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > memstress3
+Okt.-26 15:18:26.744 [main] DEBUG nextflow.script.ScriptRunner - Parsed script files:
+  Script_b6aff496f2892cac: /workflows/filein/main.nf
+Okt.-26 15:18:26.744 [main] DEBUG nextflow.script.ScriptRunner - > Awaiting termination 
+Okt.-26 15:18:26.744 [main] DEBUG nextflow.Session - Session await
+Okt.-26 15:18:27.509 [Task submitter] INFO  nextflow.Session - [08/c19a49] Submitted process > createFiles (3)
+Okt.-26 15:18:27.690 [Task submitter] INFO  nextflow.Session - [20/386c1e] Submitted process > createFiles (2)
+Okt.-26 15:18:27.981 [Task submitter] INFO  nextflow.Session - [d1/32a44e] Submitted process > createFiles (1)
+Okt.-26 15:18:39.200 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 3; name: createFiles (3); status: COMPLETED; exit: 0; error: -; workDir: /workflows/filein/work/08/c19a49dfb0ceb27b9eba3c626b9422]
+Okt.-26 15:18:39.514 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 2; name: createFiles (2); status: COMPLETED; exit: 0; error: -; workDir: /workflows/filein/work/20/386c1e50768dbaced63f567662621d]
+Okt.-26 15:18:39.647 [Task submitter] INFO  nextflow.Session - [24/5fc054] Submitted process > memstress1 (1)
+Okt.-26 15:18:39.759 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 1; name: createFiles (1); status: COMPLETED; exit: 0; error: -; workDir: /workflows/filein/work/d1/32a44e4c3daf9d33fc73f4b2af8941]
+Okt.-26 15:18:39.794 [Task submitter] INFO  nextflow.Session - [a4/7bff75] Submitted process > memstress1 (2)
+Okt.-26 15:18:39.900 [Task submitter] INFO  nextflow.Session - [20/2fa790] Submitted process > memstress1 (3)
+Okt.-26 15:20:01.269 [SIGINT handler] DEBUG nextflow.Session - Session aborted -- Cause: SIGINT
+Okt.-26 15:20:01.302 [SIGINT handler] DEBUG nextflow.Session - The following nodes are still active:
+[process] memstress2
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: infile
+  port 1: (cntrl) -     ; channel: $
+
+[process] memstress3
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: infile
+  port 1: (cntrl) -     ; channel: $
+
+Okt.-26 15:20:01.306 [main] DEBUG nextflow.Session - Session await > all processes finished
+Okt.-26 15:20:01.307 [main] DEBUG nextflow.Session - Session await > all barriers passed
+Okt.-26 15:20:01.307 [Task monitor] DEBUG n.processor.TaskPollingMonitor - <<< barrier arrives (monitor: k8s) - terminating tasks monitor poll loop
+Okt.-26 15:20:01.320 [main] WARN  n.processor.TaskPollingMonitor - Killing running tasks (3)
+Okt.-26 15:20:01.489 [main] DEBUG n.trace.WorkflowStatsObserver - Workflow completed > WorkflowStats[succeededCount=3; failedCount=0; ignoredCount=0; cachedCount=0; pendingCount=0; submittedCount=3; runningCount=-3; retriesCount=0; abortedCount=3; succeedDuration=68ms; failedDuration=0ms; cachedDuration=0ms;loadCpus=-3; loadMemory=0; peakRunning=1; peakCpus=1; peakMemory=0; ]
+Okt.-26 15:20:01.489 [main] DEBUG nextflow.trace.TraceFileObserver - Workflow completed -- saving trace file
+Okt.-26 15:20:01.520 [main] ERROR nextflow.cws.k8s.CWSK8sExecutor - Error while closing scheduler
+java.net.ConnectException: Verbindungsaufbau abgelehnt (Connection refused)
+	at java.base/java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:412)
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:255)
+	at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:237)
+	at java.base/java.net.Socket.connect(Socket.java:609)
+	at java.base/java.net.Socket.connect(Socket.java:558)
+	at java.base/sun.net.NetworkClient.doConnect(NetworkClient.java:182)
+	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:509)
+	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:604)
+	at java.base/sun.net.www.http.HttpClient.<init>(HttpClient.java:277)
+	at java.base/sun.net.www.http.HttpClient.New(HttpClient.java:376)
+	at java.base/sun.net.www.http.HttpClient.New(HttpClient.java:397)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1253)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1187)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1081)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:1015)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1592)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1520)
+	at java.base/java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:527)
+	at java_net_HttpURLConnection$getResponseCode.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:47)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:130)
+	at nextflow.cws.SchedulerClient.closeScheduler(SchedulerClient.groovy:64)
+	at nextflow.cws.k8s.CWSK8sExecutor.shutdown(CWSK8sExecutor.groovy:109)
+	at nextflow.executor.ExecutorFactory.shutdown(ExecutorFactory.groovy:244)
+	at nextflow.Session.destroy(Session.groovy:679)
+	at nextflow.script.ScriptRunner.shutdown(ScriptRunner.groovy:259)
+	at nextflow.script.ScriptRunner.execute(ScriptRunner.groovy:145)
+	at nextflow.cli.CmdRun.run(CmdRun.groovy:372)
+	at nextflow.cli.Launcher.run(Launcher.groovy:499)
+	at nextflow.cli.Launcher.main(Launcher.groovy:670)
+Okt.-26 15:20:01.555 [main] DEBUG nextflow.cache.CacheDB - Closing CacheDB done
+Okt.-26 15:20:01.555 [main] INFO  org.pf4j.AbstractPluginManager - Stop plugin 'nf-cws@1.0.3'
+Okt.-26 15:20:01.556 [main] DEBUG nextflow.plugin.BasePlugin - Plugin stopped nf-cws
+Okt.-26 15:20:01.611 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye

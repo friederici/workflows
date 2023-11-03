@@ -1,0 +1,2 @@
+memstress !{STR}
+use 500 megabyte for 30 seconds on 1 cpus

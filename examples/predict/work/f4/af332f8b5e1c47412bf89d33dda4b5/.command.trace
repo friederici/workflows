@@ -1,0 +1,17 @@
+nextflow.trace/v2
+realtime=30063
+%cpu=853
+cpu_model=Intel(R) Core(TM) i7-8550U CPU @ 1.80GHz
+rchar=79857
+wchar=422
+syscr=276
+syscw=22
+read_bytes=167936
+write_bytes=0
+%mem=71
+vmem=728216
+rss=583608
+peak_vmem=728216
+peak_rss=593208
+vol_ctxt=160
+inv_ctxt=11798

@@ -1,0 +1,88 @@
+Okt.-27 18:15:25.646 [main] DEBUG nextflow.cli.Launcher - $> nextflow run main.nf
+Okt.-27 18:15:25.771 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 23.10.0
+Okt.-27 18:15:25.803 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/home/pflo/.nextflow/plugins; core-plugins: nf-amazon@2.1.4,nf-azure@1.3.2,nf-cloudcache@0.3.0,nf-codecommit@0.1.5,nf-console@1.0.6,nf-ga4gh@1.1.0,nf-google@1.8.3,nf-tower@1.6.3,nf-wave@1.0.0
+Okt.-27 18:15:25.820 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Okt.-27 18:15:25.821 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Okt.-27 18:15:25.842 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.4.1 in 'deployment' mode
+Okt.-27 18:15:25.856 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+Okt.-27 18:15:25.882 [main] DEBUG nextflow.config.ConfigBuilder - Found config local: /workflows/predict/nextflow.config
+Okt.-27 18:15:25.884 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /workflows/predict/nextflow.config
+Okt.-27 18:15:25.914 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `standard`
+Okt.-27 18:15:26.819 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=2 by global default
+Okt.-27 18:15:26.845 [main] INFO  nextflow.cli.CmdRun - Launching `main.nf` [focused_wiles] DSL2 - revision: efe88664b3
+Okt.-27 18:15:26.846 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins declared=[nf-cws]
+Okt.-27 18:15:26.847 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+Okt.-27 18:15:26.847 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[nf-cws]
+Okt.-27 18:15:26.847 [main] DEBUG nextflow.plugin.PluginUpdater - Installing plugin nf-cws version: latest
+Okt.-27 18:15:27.624 [main] INFO  org.pf4j.AbstractPluginManager - Plugin 'nf-cws@1.0.3' resolved
+Okt.-27 18:15:27.625 [main] INFO  org.pf4j.AbstractPluginManager - Start plugin 'nf-cws@1.0.3'
+Okt.-27 18:15:27.630 [main] DEBUG nextflow.plugin.BasePlugin - Plugin started nf-cws@1.0.3
+Okt.-27 18:15:27.648 [main] DEBUG n.secret.LocalSecretsProvider - Secrets store: /home/pflo/.nextflow/secrets/store.json
+Okt.-27 18:15:27.654 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@6ca30b8a] - activable => nextflow.secret.LocalSecretsProvider@6ca30b8a
+Okt.-27 18:15:27.771 [main] DEBUG nextflow.Session - Session UUID: 820031a0-e3cc-45fd-ab5f-296f77b2b2c1
+Okt.-27 18:15:27.771 [main] DEBUG nextflow.Session - Run name: focused_wiles
+Okt.-27 18:15:27.772 [main] DEBUG nextflow.Session - Executor pool size: 4
+Okt.-27 18:15:27.786 [main] DEBUG nextflow.file.FilePorter - File porter settings maxRetries=3; maxTransfers=50; pollTimeout=null
+Okt.-27 18:15:27.792 [main] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'FileTransfer' minSize=10; maxSize=12; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
+Okt.-27 18:15:27.833 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 23.10.0 build 5889
+  Created: 15-10-2023 15:07 UTC (17:07 MESZ)
+  System: Linux 6.2.0-35-generic
+  Runtime: Groovy 3.0.19 on OpenJDK 64-Bit Server VM 11.0.20.1+1-post-Ubuntu-0ubuntu122.04
+  Encoding: UTF-8 (UTF-8)
+  Process: 14786@pflo-VirtualBox [127.0.1.1]
+  CPUs: 4 - Mem: 7.7 GB (127.6 MB) - Swap: 2 GB (2 GB)
+Okt.-27 18:15:27.872 [main] DEBUG nextflow.Session - Work-dir: /workflows/predict/work [ext2/ext3]
+Okt.-27 18:15:27.872 [main] DEBUG nextflow.Session - Script base path does not exist or is not a directory: /workflows/predict/bin
+Okt.-27 18:15:27.903 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[CWSK8sExecutor]
+Okt.-27 18:15:27.904 [main] DEBUG nextflow.executor.ExecutorFactory - Replacing executor K8sExecutor with class nextflow.cws.k8s.CWSK8sExecutor
+Okt.-27 18:15:27.930 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+Okt.-27 18:15:27.941 [main] DEBUG nextflow.Session - Observer factory: CWSFactory
+Okt.-27 18:15:27.975 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+Okt.-27 18:15:27.996 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 5; maxThreads: 1000
+Okt.-27 18:15:28.102 [main] DEBUG nextflow.Session - Session start
+Okt.-27 18:15:28.106 [main] DEBUG nextflow.trace.TraceFileObserver - Workflow started -- trace file: /workflows/predict/trace-20231027-65727935.txt
+Okt.-27 18:15:28.395 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Okt.-27 18:15:28.514 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: k8s
+Okt.-27 18:15:28.514 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'k8s'
+Okt.-27 18:15:28.517 [main] DEBUG nextflow.executor.Executor - [warm up] executor > k8s
+Okt.-27 18:15:28.530 [main] DEBUG n.c.processor.CWSTaskPollingMonitor - Creating task monitor for executor 'k8s' > capacity: 100; pollInterval: 5s; dumpInterval: 5m; schedulerBatch: null
+Okt.-27 18:15:28.534 [main] DEBUG n.processor.TaskPollingMonitor - >>> barrier register (monitor: k8s)
+Okt.-27 18:15:28.642 [main] DEBUG nextflow.k8s.K8sExecutor - [K8s] config=[namespace:workflows, serviceAccount:sauser, storageClaimName:workflows-pvc, storageMountPath:/workflows, scheduler:[name:workflow-scheduler]]; API client config=ClientConfig[ server=https://192.168.49.2:8443, namespace=workflows, serviceAccount=sauser, token=-, sslCert=LS0tLS1CRUd.., clientCert=LS0tLS1CRUd.., clientKey=LS0tLS1CRUd.., verifySsl=true, fromFile=false, httpReadTimeout=null, httpConnectTimeout=null, maxErrorRetry=4 ]
+Okt.-27 18:16:44.370 [main] DEBUG nextflow.Session - Workflow process names [dsl2]: memstress
+Okt.-27 18:16:44.427 [main] DEBUG nextflow.Session - Igniting dataflow network (2)
+Okt.-27 18:16:44.431 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > memstress
+Okt.-27 18:16:44.433 [main] DEBUG nextflow.script.ScriptRunner - Parsed script files:
+  Script_b94c8641caee8fbd: /workflows/predict/main.nf
+Okt.-27 18:16:44.438 [main] DEBUG nextflow.script.ScriptRunner - > Awaiting termination 
+Okt.-27 18:16:44.439 [main] DEBUG nextflow.Session - Session await
+Okt.-27 18:16:44.977 [Task submitter] INFO  nextflow.Session - [7a/e01878] Submitted process > memstress (3)
+Okt.-27 18:16:45.122 [Task submitter] INFO  nextflow.Session - [f1/d62e7b] Submitted process > memstress (2)
+Okt.-27 18:16:45.180 [Task submitter] INFO  nextflow.Session - [f3/9b9548] Submitted process > memstress (4)
+Okt.-27 18:16:45.237 [Task submitter] INFO  nextflow.Session - [82/e27a64] Submitted process > memstress (6)
+Okt.-27 18:16:45.284 [Task submitter] INFO  nextflow.Session - [c2/fb06c9] Submitted process > memstress (7)
+Okt.-27 18:16:45.336 [Task submitter] INFO  nextflow.Session - [78/7575ae] Submitted process > memstress (1)
+Okt.-27 18:16:45.398 [Task submitter] INFO  nextflow.Session - [f4/af332f] Submitted process > memstress (5)
+Okt.-27 18:16:45.468 [Task submitter] INFO  nextflow.Session - [71/0e31c2] Submitted process > memstress (9)
+Okt.-27 18:16:45.517 [Task submitter] INFO  nextflow.Session - [16/488006] Submitted process > memstress (8)
+Okt.-27 18:16:45.607 [Task submitter] INFO  nextflow.Session - [9e/eb2de0] Submitted process > memstress (10)
+Okt.-27 18:17:23.622 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 3; name: memstress (3); status: COMPLETED; exit: 0; error: -; workDir: /workflows/predict/work/7a/e018780e498d7e3951bf2bf4ad5a2c]
+Okt.-27 18:17:59.556 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 2; name: memstress (2); status: COMPLETED; exit: 0; error: -; workDir: /workflows/predict/work/f1/d62e7b38194f885bf529bfb5b4d2e9]
+Okt.-27 18:17:59.786 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 4; name: memstress (4); status: COMPLETED; exit: 0; error: -; workDir: /workflows/predict/work/f3/9b95482d645f1376910d5bb7a8e472]
+Okt.-27 18:17:59.906 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 6; name: memstress (6); status: COMPLETED; exit: 0; error: -; workDir: /workflows/predict/work/82/e27a64de49140ab9959886367f29a4]
+Okt.-27 18:18:33.630 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 7; name: memstress (7); status: COMPLETED; exit: 0; error: -; workDir: /workflows/predict/work/c2/fb06c9d3182903e9cfa46c5c1e8740]
+Okt.-27 18:18:33.714 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 1; name: memstress (1); status: COMPLETED; exit: 0; error: -; workDir: /workflows/predict/work/78/7575aec377c8b05e6dadb8b396eac8]
+Okt.-27 18:18:38.975 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 5; name: memstress (5); status: COMPLETED; exit: 0; error: -; workDir: /workflows/predict/work/f4/af332f8b5e1c47412bf89d33dda4b5]
+Okt.-27 18:19:08.637 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 9; name: memstress (9); status: COMPLETED; exit: 0; error: -; workDir: /workflows/predict/work/71/0e31c2d1c504b47091973acb81d77a]
+Okt.-27 18:19:08.733 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 8; name: memstress (8); status: COMPLETED; exit: 0; error: -; workDir: /workflows/predict/work/16/48800659e50a221115f2ad67b6def0]
+Okt.-27 18:19:13.874 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 10; name: memstress (10); status: COMPLETED; exit: 0; error: -; workDir: /workflows/predict/work/9e/eb2de0a8deda12713e8ee501fcec0b]
+Okt.-27 18:19:13.882 [main] DEBUG nextflow.Session - Session await > all processes finished
+Okt.-27 18:19:18.578 [Task monitor] DEBUG n.processor.TaskPollingMonitor - <<< barrier arrives (monitor: k8s) - terminating tasks monitor poll loop
+Okt.-27 18:19:18.579 [main] DEBUG nextflow.Session - Session await > all barriers passed
+Okt.-27 18:19:18.594 [main] DEBUG n.trace.WorkflowStatsObserver - Workflow completed > WorkflowStats[succeededCount=10; failedCount=0; ignoredCount=0; cachedCount=0; pendingCount=0; submittedCount=0; runningCount=0; retriesCount=0; abortedCount=0; succeedDuration=5m 1s; failedDuration=0ms; cachedDuration=0ms;loadCpus=0; loadMemory=0; peakRunning=3; peakCpus=3; peakMemory=12 GB; ]
+Okt.-27 18:19:18.594 [main] DEBUG nextflow.trace.TraceFileObserver - Workflow completed -- saving trace file
+Okt.-27 18:19:18.781 [main] DEBUG nextflow.cache.CacheDB - Closing CacheDB done
+Okt.-27 18:19:18.781 [main] INFO  org.pf4j.AbstractPluginManager - Stop plugin 'nf-cws@1.0.3'
+Okt.-27 18:19:18.781 [main] DEBUG nextflow.plugin.BasePlugin - Plugin stopped nf-cws
+Okt.-27 18:19:18.826 [main] DEBUG nextflow.util.ThreadPoolManager - Thread pool 'FileTransfer' shutdown completed (hard=false)
+Okt.-27 18:19:18.827 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye

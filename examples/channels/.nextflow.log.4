@@ -1,0 +1,136 @@
+Okt.-23 16:40:18.625 [main] DEBUG nextflow.cli.Launcher - $> nextflow run example5.nf
+Okt.-23 16:40:18.724 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 23.10.0
+Okt.-23 16:40:18.751 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/home/pflo/.nextflow/plugins; core-plugins: nf-amazon@2.1.4,nf-azure@1.3.2,nf-cloudcache@0.3.0,nf-codecommit@0.1.5,nf-console@1.0.6,nf-ga4gh@1.1.0,nf-google@1.8.3,nf-tower@1.6.3,nf-wave@1.0.0
+Okt.-23 16:40:18.764 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Okt.-23 16:40:18.765 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Okt.-23 16:40:18.769 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.4.1 in 'deployment' mode
+Okt.-23 16:40:18.784 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+Okt.-23 16:40:18.869 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=2 by global default
+Okt.-23 16:40:18.890 [main] INFO  nextflow.cli.CmdRun - Launching `example5.nf` [golden_euler] DSL2 - revision: 9a27375a95
+Okt.-23 16:40:18.891 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+Okt.-23 16:40:18.891 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[]
+Okt.-23 16:40:18.902 [main] DEBUG n.secret.LocalSecretsProvider - Secrets store: /home/pflo/.nextflow/secrets/store.json
+Okt.-23 16:40:18.910 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@34b9fc7d] - activable => nextflow.secret.LocalSecretsProvider@34b9fc7d
+Okt.-23 16:40:18.993 [main] DEBUG nextflow.Session - Session UUID: 3d999745-19da-405b-982d-6bfb6755fa55
+Okt.-23 16:40:18.993 [main] DEBUG nextflow.Session - Run name: golden_euler
+Okt.-23 16:40:18.995 [main] DEBUG nextflow.Session - Executor pool size: 4
+Okt.-23 16:40:19.004 [main] DEBUG nextflow.file.FilePorter - File porter settings maxRetries=3; maxTransfers=50; pollTimeout=null
+Okt.-23 16:40:19.010 [main] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'FileTransfer' minSize=10; maxSize=12; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
+Okt.-23 16:40:19.044 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 23.10.0 build 5889
+  Created: 15-10-2023 15:07 UTC (17:07 MESZ)
+  System: Linux 6.2.0-35-generic
+  Runtime: Groovy 3.0.19 on OpenJDK 64-Bit Server VM 11.0.20.1+1-post-Ubuntu-0ubuntu122.04
+  Encoding: UTF-8 (UTF-8)
+  Process: 22479@pflo-VirtualBox [127.0.1.1]
+  CPUs: 4 - Mem: 7.7 GB (5 GB) - Swap: 2 GB (2 GB)
+Okt.-23 16:40:19.073 [main] DEBUG nextflow.Session - Work-dir: /workflows/CreateFiles/work [ext2/ext3]
+Okt.-23 16:40:19.074 [main] DEBUG nextflow.Session - Script base path does not exist or is not a directory: /workflows/CreateFiles/bin
+Okt.-23 16:40:19.084 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
+Okt.-23 16:40:19.118 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+Okt.-23 16:40:19.146 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+Okt.-23 16:40:19.158 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 5; maxThreads: 1000
+Okt.-23 16:40:19.268 [main] DEBUG nextflow.Session - Session start
+Okt.-23 16:40:20.102 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Okt.-23 16:40:20.209 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Okt.-23 16:40:20.209 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Okt.-23 16:40:20.216 [main] DEBUG nextflow.executor.Executor - [warm up] executor > local
+Okt.-23 16:40:20.222 [main] DEBUG n.processor.LocalPollingMonitor - Creating local task monitor for executor 'local' > cpus=4; memory=7.7 GB; capacity=4; pollInterval=100ms; dumpInterval=5m
+Okt.-23 16:40:20.225 [main] DEBUG n.processor.TaskPollingMonitor - >>> barrier register (monitor: local)
+Okt.-23 16:40:20.373 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Okt.-23 16:40:20.373 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Okt.-23 16:40:20.407 [main] DEBUG nextflow.Session - Workflow process names [dsl2]: createFiles, splitFile
+Okt.-23 16:40:20.407 [main] DEBUG nextflow.Session - Igniting dataflow network (3)
+Okt.-23 16:40:20.408 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > createFiles
+Okt.-23 16:40:20.408 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > splitFile
+Okt.-23 16:40:20.413 [main] DEBUG nextflow.script.ScriptRunner - Parsed script files:
+  Script_f2fd1b839abc9461: /workflows/CreateFiles/example5.nf
+Okt.-23 16:40:20.413 [main] DEBUG nextflow.script.ScriptRunner - > Awaiting termination 
+Okt.-23 16:40:20.413 [main] DEBUG nextflow.Session - Session await
+Okt.-23 16:40:20.675 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Okt.-23 16:40:20.677 [Task submitter] INFO  nextflow.Session - [83/323696] Submitted process > createFiles (3)
+Okt.-23 16:40:20.686 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Okt.-23 16:40:20.691 [Task submitter] INFO  nextflow.Session - [e0/8d2217] Submitted process > createFiles (1)
+Okt.-23 16:40:20.696 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Okt.-23 16:40:20.702 [Task submitter] INFO  nextflow.Session - [ca/738430] Submitted process > createFiles (6)
+Okt.-23 16:40:20.707 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Okt.-23 16:40:20.729 [Task submitter] INFO  nextflow.Session - [67/14c697] Submitted process > createFiles (2)
+Okt.-23 16:40:20.734 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 3; name: createFiles (3); status: COMPLETED; exit: 0; error: -; workDir: /workflows/CreateFiles/work/83/3236968751fc0eb8d02965bde923c8]
+Okt.-23 16:40:20.740 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Okt.-23 16:40:20.740 [Task submitter] INFO  nextflow.Session - [ac/7c7a0b] Submitted process > createFiles (4)
+Okt.-23 16:40:20.829 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 1; name: createFiles (1); status: COMPLETED; exit: 0; error: -; workDir: /workflows/CreateFiles/work/e0/8d22177d6086088778f200e7fac2f9]
+Okt.-23 16:40:20.833 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Okt.-23 16:40:20.833 [Task submitter] INFO  nextflow.Session - [ad/3b1a0a] Submitted process > createFiles (7)
+Okt.-23 16:40:20.849 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 6; name: createFiles (6); status: COMPLETED; exit: 0; error: -; workDir: /workflows/CreateFiles/work/ca/738430630ba307bdebe72b9a45c082]
+Okt.-23 16:40:20.852 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Okt.-23 16:40:20.853 [Task submitter] INFO  nextflow.Session - [4d/2e5e2b] Submitted process > createFiles (9)
+Okt.-23 16:40:20.865 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 2; name: createFiles (2); status: COMPLETED; exit: 0; error: -; workDir: /workflows/CreateFiles/work/67/14c69791911be501d5134b8b97d029]
+Okt.-23 16:40:20.873 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Okt.-23 16:40:20.873 [Task submitter] INFO  nextflow.Session - [6e/890038] Submitted process > createFiles (8)
+Okt.-23 16:40:20.879 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 4; name: createFiles (4); status: COMPLETED; exit: 0; error: -; workDir: /workflows/CreateFiles/work/ac/7c7a0b547c009341d64ff1fff5194f]
+Okt.-23 16:40:20.883 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Okt.-23 16:40:20.884 [Task submitter] INFO  nextflow.Session - [be/cfe210] Submitted process > createFiles (10)
+Okt.-23 16:40:20.899 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 7; name: createFiles (7); status: COMPLETED; exit: 0; error: -; workDir: /workflows/CreateFiles/work/ad/3b1a0ad4c68b7c7ccf92dc338ec4b8]
+Okt.-23 16:40:20.908 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Okt.-23 16:40:20.908 [Task submitter] INFO  nextflow.Session - [ca/442c7a] Submitted process > createFiles (5)
+Okt.-23 16:40:20.916 [Actor Thread 7] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
+  task: name=splitFile (3); work-dir=null
+  error [nextflow.exception.ProcessUnrecoverableException]: Process `splitFile (3)` script contains error(s)
+Okt.-23 16:40:20.934 [Actor Thread 7] ERROR nextflow.processor.TaskProcessor - Error executing process > 'splitFile (3)'
+
+Caused by:
+  Failed to parse template script (your template may contain an error or be trying to use expressions not currently supported): org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:
+/groovy/script/ScriptF5D58B92150F6019FB1FB904C4944699: 1: Unexpected input: '(' @ line 1, column 15.
+   __$$_out.print("""
+                 ^
+
+1 error
+
+
+Source block:
+  '''
+    filesize=`wc -c < !{infile}`
+    halfsize=`expr ${filesize} / 2`
+    dd if=!{infile} of=!{o1_*} bs=1 count=${halfsize}
+    dd if=!{infile} of=!{o2_*} bs=1 skip=${halfsize}
+    '''
+
+Tip: view the complete command output by changing to the process work dir and entering the command `cat .command.out`
+Okt.-23 16:40:20.940 [Actor Thread 7] DEBUG nextflow.Session - Session aborted -- Cause: Process `splitFile (3)` script contains error(s)
+Okt.-23 16:40:20.951 [Task monitor] DEBUG n.processor.TaskPollingMonitor - <<< barrier arrives (monitor: local) - terminating tasks monitor poll loop
+Okt.-23 16:40:20.972 [Actor Thread 7] DEBUG nextflow.Session - The following nodes are still active:
+[process] splitFile
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: infile
+  port 1: (cntrl) -     ; channel: $
+
+Okt.-23 16:40:20.989 [main] DEBUG nextflow.Session - Session await > all processes finished
+Okt.-23 16:40:20.990 [main] DEBUG nextflow.Session - Session await > all barriers passed
+Okt.-23 16:40:20.998 [Actor Thread 3] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
+  task: name=splitFile; work-dir=null
+  error [java.lang.IllegalStateException]: Cannot obtain the semaphore to fork operator's body.
+Okt.-23 16:40:20.995 [main] WARN  n.processor.TaskPollingMonitor - Killing running tasks (4)
+Okt.-23 16:40:21.010 [Actor Thread 5] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
+  task: name=splitFile (1); work-dir=null
+  error [nextflow.exception.ProcessUnrecoverableException]: Process `splitFile (1)` script contains error(s)
+Okt.-23 16:40:21.011 [Actor Thread 6] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
+  task: name=splitFile (2); work-dir=null
+  error [nextflow.exception.ProcessUnrecoverableException]: Process `splitFile (2)` script contains error(s)
+Okt.-23 16:40:21.011 [Actor Thread 8] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
+  task: name=splitFile (4); work-dir=null
+  error [nextflow.exception.ProcessUnrecoverableException]: Process `splitFile (4)` script contains error(s)
+Okt.-23 16:40:21.018 [main] DEBUG n.executor.local.LocalTaskHandler - Unable to kill createFiles (9) -- command: kill -TERM 22616; exit: 1 
+ bash: Zeile 1: kill: (22616) - Kein passender Prozess gefunden
+
+Okt.-23 16:40:21.025 [main] DEBUG n.executor.local.LocalTaskHandler - Unable to kill createFiles (8) -- command: kill -TERM 22625; exit: 1 
+ bash: Zeile 1: kill: (22625) - Kein passender Prozess gefunden
+
+Okt.-23 16:40:21.030 [main] DEBUG n.executor.local.LocalTaskHandler - Unable to kill createFiles (10) -- command: kill -TERM 22630; exit: 1 
+ bash: Zeile 1: kill: (22630) - Kein passender Prozess gefunden
+
+Okt.-23 16:40:21.035 [main] DEBUG n.executor.local.LocalTaskHandler - Unable to kill createFiles (5) -- command: kill -TERM 22643; exit: 1 
+ bash: Zeile 1: kill: (22643) - Kein passender Prozess gefunden
+
+Okt.-23 16:40:21.036 [main] DEBUG n.trace.WorkflowStatsObserver - Workflow completed > WorkflowStats[succeededCount=6; failedCount=0; ignoredCount=0; cachedCount=0; pendingCount=0; submittedCount=1; runningCount=0; retriesCount=0; abortedCount=3; succeedDuration=15ms; failedDuration=0ms; cachedDuration=0ms;loadCpus=-1; loadMemory=0; peakRunning=3; peakCpus=3; peakMemory=0; ]
+Okt.-23 16:40:21.191 [main] DEBUG nextflow.cache.CacheDB - Closing CacheDB done
+Okt.-23 16:40:21.216 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye
