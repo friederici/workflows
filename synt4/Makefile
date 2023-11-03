@@ -1,38 +1,38 @@
 prod-run-default:
-	nextflow run main.nf -c base.config -c default.config
+	nextflow run main.nf -c ../config/base.config -c ../config/default.config
 
 prod-run-none:
-	nextflow run main.nf -c base.config -c none.config
+	nextflow run main.nf -c ../config/base.config -c ../config/none.config
 
 prod-run-constant:
-	nextflow run main.nf -c base.config -c constant.config
+	nextflow run main.nf -c ../config/base.config -c ../config/constant.config
 
 prod-run-linear:
-	nextflow run main.nf -c base.config -c linear.config
+	nextflow run main.nf -c ../config/base.config -c ../config/linear.config
 
 prod-run-combi:
-	nextflow run main.nf -c base.config -c combi.config
+	nextflow run main.nf -c ../config/base.config -c ../config/combi.config
 
 prod-run-kube:
-	nextflow run main.nf -c base.config -c kube.config
+	nextflow run main.nf -c ../config/base.config -c ../config/kube.config
 
 dev-run-default:
-	nextflow run main.nf -c base.config -c localcws.config -c default.config
+	nextflow run main.nf -c ../config/base.config -c ../config/localcws.config -c ../config/default.config
 
 dev-run-none:
-	nextflow run main.nf -c base.config -c localcws.config -c none.config
+	nextflow run main.nf -c ../config/base.config -c ../config/localcws.config -c ../config/none.config
 
 dev-run-constant:
-	nextflow run main.nf -c base.config -c localcws.config -c constant.config
+	nextflow run main.nf -c ../config/base.config -c ../config/localcws.config -c ../config/constant.config
 
 dev-run-linear:
-	nextflow run main.nf -c base.config -c localcws.config -c linear.config
+	nextflow run main.nf -c ../config/base.config -c ../config/localcws.config -c ../config/linear.config
 
 dev-run-combi:
-	nextflow run main.nf -c base.config -c localcws.config -c combi.config
+	nextflow run main.nf -c ../config/base.config -c ../config/localcws.config -c ../config/combi.config
 
 dev-run-kube:
-	nextflow run main.nf -c base.config -c localcws.config -c kube.config
+	nextflow run main.nf -c ../config/base.config -c ../config/localcws.config -c ../config/kube.config
 
 clean:
 	${RM} -r work
