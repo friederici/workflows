@@ -6,3 +6,5 @@ data/*.txt
 **/trace*
 
 **/TaskScaler*
+result.zip
+
