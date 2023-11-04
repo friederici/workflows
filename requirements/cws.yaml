@@ -14,7 +14,7 @@ spec:
     env:
     - name: SCHEDULER_NAME
       value: workflow-scheduler
-    - name: MEMORY_PREDICTOR
+    - name: MEMORY_PREDICTOR_DEFAULT
       value: combi
     imagePullPolicy: Always
     resources:
@@ -24,6 +24,8 @@ spec:
     volumeMounts:
     - mountPath: /workflows
       name: vol-1
+    - mountPath: /nfs
+      name: vol-2
   nodeSelector:
     ramSize: "4"
   restartPolicy: Never
@@ -34,4 +36,7 @@ spec:
     - name: vol-1
       persistentVolumeClaim:
         claimName: workflows-pvc
+    - name: vol-2
+      persistentVolumeClaim:
+        claimName: nfs-pvc
 
