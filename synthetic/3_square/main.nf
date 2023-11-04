@@ -18,8 +18,8 @@ include { square_stress } from '../processes.nf'
 workflow {
   def cpu = Channel.of(1)
   def time = Channel.of(30) // in seconds
-  Channel.fromPath( '/workflows/data/*.txt' ) | 
-    concat(Channel.fromPath( '/workflows/data/*.txt' )) | 
+  Channel.fromPath( '/workflows/data/*.wf3' ) | 
+    concat(Channel.fromPath( '/workflows/data/*.wf3' )) | 
     buffer( size: 2 ) |
     combine(cpu) | 
     combine(time) |

@@ -6,7 +6,8 @@
 
 process constant_stress {
   cpus 1
-  memory '4 GB'
+  memory { 4.GB * task.attempt }
+  errorStrategy 'retry'
 
   input:
   tuple path(IN), val(CPU), val(TIME)
@@ -26,7 +27,8 @@ process constant_stress {
 
 process linear_stress {
   cpus 1
-  memory '4 G'
+  memory { 4.GB * task.attempt }
+  errorStrategy 'retry'
 
   input:
   tuple path(IN), val(CPU), val(TIME)
@@ -48,7 +50,8 @@ process linear_stress {
 
 process square_stress {
   cpus 1
-  memory '4 GB'
+  memory { 4.GB * task.attempt }
+  errorStrategy 'retry'
 
   input:
   tuple path('IN1'), path('IN2'), val(CPU), val(TIME)
@@ -69,7 +72,8 @@ process square_stress {
 
 process random_stress {
   cpus 1
-  memory '4 GB'
+  memory { 4.GB * task.attempt }
+  errorStrategy 'retry'
 
   input:
   tuple path(IN), val(CPU), val(TIME)
