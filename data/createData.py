@@ -3,8 +3,8 @@ from random import randrange
 import sys
 
 
-def create_dataset_square_prod(cardiality, lower_boundary, upper_boundary):
-	for num in range(1,cardiality+1):
+def create_dataset_square_prod(cardinality, lower_boundary, upper_boundary):
+	for num in range(1,cardinality+1):
 		fp = open(f'wf3.{num}.wf3', 'w')
 		fp.write('3'*randrange(lower_boundary,upper_boundary))
 		fp.close()
@@ -22,7 +22,7 @@ def create_dataset_square_dev():
 
 	
 def create_dataset(cardinality, lower_boundary, upper_boundary):
-	for num in range(1,cardiality+1):
+	for num in range(1,cardinality+1):
 		fp = open(f'txt.{num}.txt', 'w')
 		fp.write('0'*randrange(lower_boundary,upper_boundary))
 		fp.close()
