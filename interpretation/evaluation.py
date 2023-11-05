@@ -6,6 +6,14 @@ import os
 import sys
 
 
+def get_csv_in_folder(path):
+    files_list = []
+    for f in os.listdir(path):
+        if f.endswith('csv'):
+            files_list.append(os.path.join(path,f))
+    return files_list
+
+
 def extract_predictor(path):
     txtpath = path.replace('csv','txt')
     with open(txtpath, 'r') as file:
@@ -32,13 +40,15 @@ def create_plot(path):
 
 def main():
     print("Evaluation")
-    print(sys.argv)
     if len(sys.argv) != 2:
         print(f"usage: {sys.argv[0]} <filename>")
         exit(1)
     csvfile = sys.argv[1]
-    create_plot(csvfile)
-    
-
+    if os.path.isfile(csvfile):
+        create_plot(csvfile)
+    elif os.path.isdir(csvfile):
+        for csv in get_csv_in_folder(csvfile):
+            create_plot(csv)
+            
 if __name__ == "__main__":
     main()
