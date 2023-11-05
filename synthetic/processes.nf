@@ -65,7 +65,7 @@ process square_stress {
   FILESIZE=`wc -c < IN`
   MEM=$(( ${FILESIZE} * ${FILESIZE}))
   echo "square_stress !{IN1} !{IN2} !{CPU} !{TIME} ${MEM}"
-  stress-ng --vm-bytes ${MEM}m --vm-keep -m !{CPU} -t !{TIME}
+  stress-ng --vm-bytes ${MEM}m --vm-keep -m !{CPU} -t !{TIME} --page-in
   dd if=/dev/zero of=OUT bs=1 count=${MEM}
   '''
 }
