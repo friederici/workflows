@@ -17,7 +17,7 @@ include { constant_stress } from '../processes.nf'
 
 workflow {
   def cpu = Channel.of(1)
-  def time = Channel.of(30) // in seconds
+  def time = Channel.of(10) // in seconds
   
   Channel.fromPath( '/workflows/data/*.txt' ) | combine(cpu) | combine(time) | constant_stress | view
 }

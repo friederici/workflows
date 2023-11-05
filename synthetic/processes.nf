@@ -20,7 +20,7 @@ process constant_stress {
   FILESIZE=`wc -c < !{IN}`
   MEM=500
   echo "constant_stress !{IN} !{CPU} !{TIME} ${MEM}"
-  stress-ng --vm-bytes ${MEM}m --vm-keep -m !{CPU} -t !{TIME}
+  stress-ng --vm-bytes ${MEM}m --vm-keep -m !{CPU} -t !{TIME} --page-in
   dd if=/dev/zero of=OUT bs=1 count=${FILESIZE}
   '''
 }
@@ -41,7 +41,7 @@ process linear_stress {
   FILESIZE=`wc -c < !{IN}`
   MEM=`expr ${FILESIZE}`
   echo "linear_stress !{IN} !{CPU} !{TIME} ${MEM}"
-  stress-ng --vm-bytes ${MEM}m --vm-keep -m !{CPU} -t !{TIME}
+  stress-ng --vm-bytes ${MEM}m --vm-keep -m !{CPU} -t !{TIME} --page-in
   halfsize=`expr ${MEM} / 2`
   dd if=/dev/zero of=OUT1 bs=1 count=${halfsize}
   dd if=/dev/zero of=OUT2 bs=1 count=${halfsize}
@@ -86,7 +86,7 @@ process random_stress {
   FILESIZE=`wc -c < !{IN}`
   MEM=`expr 1 + $RANDOM % 4000`
   echo "random_stress !{IN} !{CPU} !{TIME} ${MEM}"
-  stress-ng --vm-bytes ${MEM}m --vm-keep -m !{CPU} -t !{TIME}
+  stress-ng --vm-bytes ${MEM}m --vm-keep -m !{CPU} -t !{TIME} --page-in
   dd if=/dev/zero of=OUT bs=1 count=${FILESIZE}
   '''
 }
