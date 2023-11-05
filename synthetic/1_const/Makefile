@@ -13,9 +13,6 @@ prod-run-linear:
 prod-run-combi:
 	nextflow run main.nf -c ../../config/base.config -c ../../config/combi.config
 
-prod-run-kube:
-	nextflow run main.nf -c ../../config/base.config -c ../../config/kube.config
-
 dev-run-default:
 	nextflow run main.nf -c ../../config/base.config -c ../../config/localcws.config -c ../../config/default.config
 
@@ -31,11 +28,9 @@ dev-run-linear:
 dev-run-combi:
 	nextflow run main.nf -c ../../config/base.config -c ../../config/localcws.config -c ../../config/combi.config
 
-dev-run-kube:
-	nextflow run main.nf -c ../../config/base.config -c ../../config/localcws.config -c ../../config/kube.config
-
 clean:
 	${RM} -r work
 	${RM} -r .nextflow*
 	${RM} trace*
+	${RM} Task*
 
