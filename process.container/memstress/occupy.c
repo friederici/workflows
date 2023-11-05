@@ -38,8 +38,8 @@ int main(int argc, char **argv) {
     pid_t pid;
     pid = getpid();
 
-	if (argc < 2) {
-        printf("usage: %s <size to occupy>\n", argv[0]);
+	if (argc < 3) {
+        printf("usage: %s <size to occupy> <time to wait>\n", argv[0]);
 		return 0;
     }
 	
@@ -50,9 +50,18 @@ int main(int argc, char **argv) {
 		printf("error\n");
 		return -1;
 	}
-	printf("param=%ld\n", conv);
+	printf("size=%ld\n", conv);
 	size = conv;
-	
+
+	errno = 0;
+	conv = strtol(argv[2], &p, 10);
+	if (errno != 0 || *p != '\0') {
+		printf("error\n");
+		return -1;
+	}
+	printf("time=%ld\n", conv);
+	long time = conv;
+    
 	printf("Pid: %ld\n", (long) pid);
     mem_used(pid, &vmem, &rss);
     printf("VMEM: %lu RSS: %lu\n", vmem, rss);
@@ -71,7 +80,7 @@ int main(int argc, char **argv) {
     printf("\nVMEM: %lu RSS: %lu\n", vmem, rss);
 
 	// Leave time for nextflow to get information
-    sleep(15);
+    sleep(time);
     free(address);
     return 0;
 }
