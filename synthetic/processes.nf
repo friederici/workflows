@@ -8,6 +8,7 @@ process constant_stress {
   cpus 1
   memory { 4.GB * task.attempt }
   errorStrategy 'retry'
+  maxRetries 5
 
   input:
   tuple path(IN), val(CPU), val(TIME)
@@ -30,6 +31,7 @@ process linear_stress {
   cpus 1
   memory { 4.GB * task.attempt }
   errorStrategy 'retry'
+  maxRetries 5
 
   input:
   tuple path(IN), val(CPU), val(TIME)
@@ -54,6 +56,7 @@ process square_stress {
   cpus 1
   memory { 4.GB * task.attempt }
   errorStrategy 'retry'
+  maxRetries 5
 
   input:
   tuple path('IN1'), path('IN2'), val(CPU), val(TIME)
@@ -77,6 +80,7 @@ process random_stress {
   cpus 1
   memory { 4.GB * task.attempt }
   errorStrategy 'retry'
+  maxRetries 5
 
   input:
   tuple path(IN), val(CPU), val(TIME)
