@@ -5,7 +5,7 @@ process mayfail {
   cpus 1
   memory '4 G'
   errorStrategy 'retry'
-  maxRetries 3
+  maxRetries 10
 
   input:
   path IN

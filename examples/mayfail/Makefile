@@ -1,9 +1,9 @@
 
 run:
-	nextflow run main.nf
+	NXF_DEBUG=3 nextflow run main.nf
 
 run-cws:
-	nextflow run main.nf -c ../../config/base.config -c ../../config/localcws.config -c ../../config/default.config
+	NXF_DEBUG=3 nextflow run main.nf -c base.config -c localcws.config
 
 clean:
 	${RM} -r work
