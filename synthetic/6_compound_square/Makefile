@@ -1,3 +1,6 @@
+prod-run-without:
+	nextflow run main.nf -c ../../config/base.config
+
 prod-run-default:
 	nextflow run main.nf -c ../../config/base.config -c ../../config/default.config
 
@@ -12,6 +15,9 @@ prod-run-linear:
 
 prod-run-combi:
 	nextflow run main.nf -c ../../config/base.config -c ../../config/combi.config
+
+dev-run-without:
+	nextflow run main.nf -c ../../config/base.config -c ../../config/localcws.config
 
 dev-run-default:
 	nextflow run main.nf -c ../../config/base.config -c ../../config/localcws.config -c ../../config/default.config
