@@ -56,7 +56,7 @@ process square_stress {
   cpus 1
   memory { 4.GB * task.attempt }
   errorStrategy 'retry'
-  maxRetries 5
+  maxRetries 10
 
   input:
   tuple path('IN1'), path('IN2'), val(CPU), val(TIME)
