@@ -22,7 +22,7 @@ workflow {
   def cpu = Channel.of(1)
   def time = Channel.of(10) // in seconds
 
-  Channel.fromPath( '/workflows/data/*.wf3' )
+  Channel.fromPath( '/workflows/data/*.txt' )
     .tap { files_channel }
     .combine( files_channel ) |
     combine(cpu) | 

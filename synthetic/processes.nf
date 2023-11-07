@@ -68,7 +68,7 @@ process square_stress {
   '''
   cat !{IN1} !{IN2} > IN
   FILESIZE=`wc -c < IN`
-  MEM=$(( ${FILESIZE} * ${FILESIZE}))
+  MEM=$(( (${FILESIZE}/100) ** 2 ))
   echo "square_stress !{IN1} !{IN2} !{CPU} !{TIME} ${MEM}"
   #stress-ng --vm-bytes ${MEM}m --vm-keep -m !{CPU} -t !{TIME} --page-in
   /a.out $(( $MEM * 1024 * 1024 )) !{TIME}
