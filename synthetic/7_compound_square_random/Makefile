@@ -16,6 +16,9 @@ prod-run-linear:
 prod-run-combi:
 	nextflow run main.nf -c ../../config/base.config -c ../../config/combi.config
 
+prod-run-wary:
+	nextflow run main.nf -c ../../config/base.config -c ../../config/wary.config
+
 dev-run-without:
 	nextflow run main.nf -c ../../config/base.config -c ../../config/localcws.config
 
@@ -33,6 +36,9 @@ dev-run-linear:
 
 dev-run-combi:
 	nextflow run main.nf -c ../../config/base.config -c ../../config/localcws.config -c ../../config/combi.config
+
+dev-run-wary:
+	nextflow run main.nf -c ../../config/base.config -c ../../config/localcws.config -c ../../config/wary.config
 
 clean:
 	${RM} -r work
