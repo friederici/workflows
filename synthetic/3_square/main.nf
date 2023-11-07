@@ -9,11 +9,11 @@
  * independent of the size it needs to be, so without task scaling, 
  * resources might be unused.
  *
- * The memory consumption of the task, will be square of the input 
+ * The memory consumption of the task, will be square of 1/100 of the input 
  * filesize, but multiplied with 2^20 (i.e. 1 MiB)
  *
  * The workflow will create the two input files per task as a
- * combination of input files *.wf3 (cartesian product) with itself.
+ * combination of input files *.txt with themselves.
  */
  
 include { square_stress } from '../processes.nf'
@@ -23,8 +23,7 @@ workflow {
   def time = Channel.of(10) // in seconds
 
   Channel.fromPath( '/workflows/data/*.txt' )
-    .tap { files_channel }
-    .combine( files_channel ) |
+    .map { x -> new Tuple(x,x) } |
     combine(cpu) | 
     combine(time) |
     square_stress | 
