@@ -54,6 +54,7 @@ def main():
     elif os.path.isdir(foldername):
         for txt in get_txt_in_folder(foldername):
             print('Predictor:    ' + extract_data(txt, 'memory predictor: class cws.k8s.scheduler.memory.'))
+            print('Finished:     ' + extract_data(txt, 'end: '))
             makespan = extract_data(txt, 'makespan: ')
             print('Makespan:     ' + makespan[:-3], end=' ~ ')
             print(ms_to_hhmmss(int(makespan[:-3])))
