@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import os
 import sys
+import pandas as pd
 
 
 def extract_data(path, search):
@@ -35,13 +36,44 @@ def get_txt_in_folder(path):
     return files_list
 
 
+def get_csv_from_txt(txt):
+    csv = txt.replace('txt','csv')
+    return csv
+
+
 def ms_to_hhmmss(time):
     seconds = int(time/1000)
     (hours, seconds) = divmod(seconds, 3600)
     (minutes, seconds) = divmod(seconds, 60)
     return f"{hours:02.0f}:{minutes:02.0f}:{seconds:02.0f}"
 
+        
+def print_summary(txt):
+    print('Predictor:    ' + extract_data(txt, 'memory predictor: class cws.k8s.scheduler.memory.'))
+    print('Finished:     ' + extract_data(txt, 'end: '))
+    makespan = extract_data(txt, 'makespan: ')
+    print('Makespan:     ' + makespan[:-3], end=' ~ ')
+    print(ms_to_hhmmss(int(makespan[:-3])))
+    print('Observations: ' + extract_data(txt, 'total observations collected: '), end=' ')
+    print('from ' + extract_data(txt, 'different tasks: '), end=' tasks\n')
 
+    print('Success:      ' + str( sum( extract_all_data(txt, 'success count: ') ) ), end=' | ')
+    print('Failures: ' + str( sum( extract_all_data(txt, 'failure count: ') ) ) )
+    
+
+def print_wastage(csvpath):
+    csv = pd.read_csv(csvpath)
+    filtered = csv.loc[csv['success'] == True]
+    print(filtered.agg(
+        {
+            "inputSize":["min","median","max"],
+            "ramRequest":["min","median","max"], 
+            "peakVmem":["min","median","max"], 
+            "peakRss":["min","median","max"], 
+            "wasted":["min","median","max"], 
+            "realtime":["min","median","max"], 
+        }))
+    
 def main():
     print("Summary\n")
     if len(sys.argv) != 2:
@@ -53,18 +85,10 @@ def main():
         exit(1)
     elif os.path.isdir(foldername):
         for txt in get_txt_in_folder(foldername):
-            print('Predictor:    ' + extract_data(txt, 'memory predictor: class cws.k8s.scheduler.memory.'))
-            print('Finished:     ' + extract_data(txt, 'end: '))
-            makespan = extract_data(txt, 'makespan: ')
-            print('Makespan:     ' + makespan[:-3], end=' ~ ')
-            print(ms_to_hhmmss(int(makespan[:-3])))
-            print('Observations: ' + extract_data(txt, 'total observations collected: '), end=' ')
-            print('from ' + extract_data(txt, 'different tasks: '), end=' tasks\n')
-
-            print('Success:      ' + str( sum( extract_all_data(txt, 'success count: ') ) ), end=' | ')
-            print('Failures: ' + str( sum( extract_all_data(txt, 'failure count: ') ) ) )
+            print_summary(txt)
+            print_wastage(get_csv_from_txt(txt))
             print()
-
+            
 
 if __name__ == "__main__":
     main()
