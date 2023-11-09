@@ -7,7 +7,7 @@ dev:
 	$(MAKE) -f makefile.dev
 
 prod:
-	$(MAKE) -f makefile.dev
+	$(MAKE) -f makefile.prod
 
 clean-all: $(WORKFLOWS)
 
