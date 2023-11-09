@@ -1,0 +1,63 @@
+
+WORKFLOWS := $(wildcard */.)
+
+.PHONY: clean-all $(WORKFLOWS)
+
+all:
+	cd 1_const; $(MAKE) prod-run-none; $(MAKE) prod-run-constant; $(MAKE) prod-run-linear; $(MAKE) prod-run-combi; $(MAKE) prod-run-wary
+	cd 2_linear; $(MAKE) prod-run-none; $(MAKE) prod-run-constant; $(MAKE) prod-run-linear; $(MAKE) prod-run-combi; $(MAKE) prod-run-wary
+	cd 3_square; $(MAKE) prod-run-none; $(MAKE) prod-run-constant; $(MAKE) prod-run-linear; $(MAKE) prod-run-combi; $(MAKE) prod-run-wary
+	cd 4_random; $(MAKE) prod-run-none; $(MAKE) prod-run-constant; $(MAKE) prod-run-linear; $(MAKE) prod-run-combi; $(MAKE) prod-run-wary
+	cd 5_compound; $(MAKE) prod-run-none; $(MAKE) prod-run-constant; $(MAKE) prod-run-linear; $(MAKE) prod-run-combi; $(MAKE) prod-run-wary
+	cd 6_compound_square; $(MAKE) prod-run-none; $(MAKE) prod-run-constant; $(MAKE) prod-run-linear; $(MAKE) prod-run-combi; $(MAKE) prod-run-wary
+	cd 7_compound_square_random; $(MAKE) prod-run-none; $(MAKE) prod-run-constant; $(MAKE) prod-run-linear; $(MAKE) prod-run-combi; $(MAKE) prod-run-wary
+
+none:
+	cd 1_const; $(MAKE) prod-run-none
+	cd 2_linear; $(MAKE) prod-run-none
+	cd 3_square; $(MAKE) prod-run-none
+	cd 4_random; $(MAKE) prod-run-none
+	cd 5_compound; $(MAKE) prod-run-none
+	cd 6_compound_square; $(MAKE) prod-run-none
+	cd 7_compound_square_random; $(MAKE) prod-run-none
+
+constant:
+	cd 1_const; $(MAKE) prod-run-constant
+	cd 2_linear; $(MAKE) prod-run-constant
+	cd 3_square; $(MAKE) prod-run-constant
+	cd 4_random; $(MAKE) prod-run-constant
+	cd 5_compound; $(MAKE) prod-run-none
+	cd 6_compound_square; $(MAKE) prod-run-none
+	cd 7_compound_square_random; $(MAKE) prod-run-none
+
+linear:
+	cd 1_const; $(MAKE) prod-run-linear
+	cd 2_linear; $(MAKE) prod-run-linear
+	cd 3_square; $(MAKE) prod-run-linear
+	cd 4_random; $(MAKE) prod-run-linear
+	cd 5_compound; $(MAKE) prod-run-none
+	cd 6_compound_square; $(MAKE) prod-run-none
+	cd 7_compound_square_random; $(MAKE) prod-run-none
+
+combi:
+	cd 1_const; $(MAKE) prod-run-combi
+	cd 2_linear; $(MAKE) prod-run-combi
+	cd 3_square; $(MAKE) prod-run-combi
+	cd 4_random; $(MAKE) prod-run-combi
+	cd 5_compound; $(MAKE) prod-run-none
+	cd 6_compound_square; $(MAKE) prod-run-none
+	cd 7_compound_square_random; $(MAKE) prod-run-none
+
+wary:
+	cd 1_const; $(MAKE) prod-run-wary
+	cd 2_linear; $(MAKE) prod-run-wary
+	cd 3_square; $(MAKE) prod-run-wary
+	cd 4_random; $(MAKE) prod-run-wary
+	cd 5_compound; $(MAKE) prod-run-none
+	cd 6_compound_square; $(MAKE) prod-run-none
+	cd 7_compound_square_random; $(MAKE) prod-run-none
+
+clean-all: $(WORKFLOWS)
+
+$(WORKFLOWS):
+	$(MAKE) clean -C $@
