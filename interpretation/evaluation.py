@@ -30,6 +30,7 @@ def create_plot(path):
 
     plt.scatter(csvfile.inputSize, csvfile.ramRequest, label='request', marker='+')
     plt.scatter(csvfile.inputSize, csvfile.peakRss, label='peakRss', marker='x')
+    plt.scatter(csvfile.inputSize, csvfile.peakVmem, label='peakVmem', marker='.')
     plt.legend()
     workflow = path.replace('/workflows/synthetic/','')
     plt.title(workflow + '\n' + predictor)
