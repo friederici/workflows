@@ -3,6 +3,9 @@
 for i in $(seq 1 10);
 do
 	echo $i
+	/workflows/requirements/clear_cluster.sh
+	/workflows/requirements/apply_cluster.sh
+
 	cd /nfs/data/output
 	rm -rf *
 
