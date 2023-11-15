@@ -9,6 +9,9 @@ dev:
 prod:
 	$(MAKE) -f makefile.prod
 
+prod-none:
+	$(MAKE) -f makefile.prod none
+
 clean-all: $(WORKFLOWS)
 
 $(WORKFLOWS):

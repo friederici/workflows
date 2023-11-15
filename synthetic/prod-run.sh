@@ -6,7 +6,7 @@ do
 	/workflows/requirements/clear_cluster.sh
 	/workflows/requirements/apply_cluster.sh
         make clean-all
-        make prod
+        make prod-none
         ./zip_results.sh
         mv result.zip result_$i.zip
 done
