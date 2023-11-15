@@ -21,7 +21,7 @@ def main():
 
 	elif sys.argv[1] == "prod":
 		print('prod profile')
-		create_dataset(25,300,6000)
+		create_dataset(25,300,3000)
 
 	else:
 		print('profile unknown')
