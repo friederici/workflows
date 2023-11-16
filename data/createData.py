@@ -12,7 +12,7 @@ def create_dataset(cardinality, lower_boundary, upper_boundary):
 
 def main():
 	print("Create datasets")
-	if len(sys.argv) != 2:
+	if len(sys.argv) < 2:
 		print(f"usage: {sys.argv[0]} <profile>")
 		exit(1)
 	if sys.argv[1] == "dev":
@@ -22,6 +22,14 @@ def main():
 	elif sys.argv[1] == "prod":
 		print('prod profile')
 		create_dataset(25,300,3000)
+
+	elif sys.argv[1] == "custom":
+		print('custom profile')
+		if len(sys.argv) < 3:
+			print(f"usage: {sys.argv[0]} custom <number_of_files>")
+			exit(1)
+		number_of_files = int( sys.argv[2] )
+		create_dataset(number_of_files,300,3000)
 
 	else:
 		print('profile unknown')
