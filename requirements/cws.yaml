@@ -19,15 +19,15 @@ spec:
     imagePullPolicy: Always
     resources:
       requests:
-        cpu: "1"
-        memory: 1400Mi
+        cpu: "2"
+        memory: 1800Mi
     volumeMounts:
     - mountPath: /workflows
       name: vol-1
     - mountPath: /nfs
       name: vol-2
   nodeSelector:
-    ramSize: "4"
+    ramSize: "2"
   restartPolicy: Never
   securityContext:
     runAsUser: 0
