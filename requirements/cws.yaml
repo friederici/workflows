@@ -20,7 +20,7 @@ spec:
     resources:
       requests:
         cpu: "2"
-        memory: 1800Mi
+        memory: 1600Mi
     volumeMounts:
     - mountPath: /workflows
       name: vol-1
