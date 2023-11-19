@@ -1,0 +1,42 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: workflow-scheduler
+  namespace: workflows
+  labels:
+    app: cws
+    component: scheduler
+    tier: control-plane
+spec:
+  containers:
+  - image: friederici/cws
+    name: workflow-scheduler
+    env:
+    - name: SCHEDULER_NAME
+      value: workflow-scheduler
+    - name: MEMORY_PREDICTOR_DEFAULT
+      value: combi
+    imagePullPolicy: Always
+    resources:
+      requests:
+        cpu: "2"
+        memory: 1600Mi
+    volumeMounts:
+    - mountPath: /workflows
+      name: vol-1
+    - mountPath: /nfs
+      name: vol-2
+  nodeSelector:
+    ramSize: "2"
+  restartPolicy: Never
+  securityContext:
+    runAsUser: 0
+  serviceAccount: sauser
+  volumes:
+    - name: vol-1
+      persistentVolumeClaim:
+        claimName: workflows-hostpath-pvc
+    - name: vol-2
+      persistentVolumeClaim:
+        claimName: nfs-pvc
+
