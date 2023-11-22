@@ -5,8 +5,8 @@
  */
 
 process constant_stress {
-  cpus 1
-  memory { 4.GB * task.attempt }
+  cpus 0.5
+  memory { 6.GB * task.attempt }
   errorStrategy 'retry'
   maxRetries 5
 
@@ -28,8 +28,8 @@ process constant_stress {
 }
 
 process linear_stress {
-  cpus 1
-  memory { 4.GB * task.attempt }
+  cpus 0.5
+  memory { 6.GB * task.attempt }
   errorStrategy 'retry'
   maxRetries 5
 
@@ -53,8 +53,8 @@ process linear_stress {
 }
 
 process square_stress {
-  cpus 1
-  memory { 4.GB * task.attempt }
+  cpus 0.5
+  memory { 6.GB * task.attempt }
   errorStrategy 'retry'
   maxRetries 10
 
@@ -77,8 +77,8 @@ process square_stress {
 }
 
 process random_stress {
-  cpus 1
-  memory { 4.GB * task.attempt }
+  cpus 0.5
+  memory { 6.GB * task.attempt }
   errorStrategy 'retry'
   maxRetries 5
 
