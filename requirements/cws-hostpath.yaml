@@ -38,5 +38,5 @@ spec:
         claimName: workflows-hostpath-pvc
     - name: vol-2
       persistentVolumeClaim:
-        claimName: nfs-pvc
+        claimName: nfs-hostpath-pvc
 
