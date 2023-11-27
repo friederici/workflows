@@ -7,7 +7,7 @@ spec:
   accessModes:
     - ReadWriteMany
   capacity:
-    storage: 5Gi
+    storage: 10Gi
   hostPath:
     path: "/nfs"
 
@@ -25,4 +25,4 @@ spec:
     - ReadWriteMany
   resources:
     requests:
-      storage: 5Gi
+      storage: 10Gi
