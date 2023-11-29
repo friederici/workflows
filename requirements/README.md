@@ -1,6 +1,6 @@
 # requirements
 
-Things required to set up in the Kubernetes cluster for the synt* workflows.
+Things required to set up in the Kubernetes cluster for the synthetic workflows.
 
 ## development environment
 
