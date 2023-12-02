@@ -26,7 +26,7 @@ include { constant_stress; linear_stress; square_stress; random_stress } from '.
 
 workflow {
   def cpu = Channel.of(1)
-  def time = Channel.of(30) // in seconds
+  def time = Channel.of(10) // in seconds
 
   Channel.fromPath( '/workflows/data/*.txt' ) | combine(cpu) | combine(time) | linear_stress | multiMap { a,b -> 
     upper: a
